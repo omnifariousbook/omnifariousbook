@@ -1,5 +1,7 @@
 This is for cracking window hash
+
 level: 1
+
 type: temporary access
 
 Requirement:
