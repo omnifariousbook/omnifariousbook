@@ -40,4 +40,3 @@ Extra:
 - evil-winrm -i {ip} -u {user} -p {passwd}
 replace {} with what specify.
 
-
