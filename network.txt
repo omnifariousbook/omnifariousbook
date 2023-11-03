@@ -1,0 +1,45 @@
+Note
+Alias:
+n is the number in front of forward slash 
+Example: 192.168.119.64/26 n is 26 | 192.168.119.128/28 n is 28 
+
+Always subtract 2 form host total
+Network ID take First Address 
+Example: 192.168.0.0/24
+Broadcast take Last Address
+Example: 192.168.0.255/24
+To find number of host
+Number of host: 2^(32 - n)
+Example: 192.168.119.128/28 => 2^(32 - 28) = 16 hosts
+To find subnet mask
+if n =< 8 => (256 - number of host) put the number in 255.255.255.0 <=
+if n > 8 =< 16 => 256 - (number of host/256) put the number in 255.255.0 <= .0 
+if n > 16 =< 24 => 256 - (number of host/512) put the number in 255.0 <= .0.0 
+
+The OSI Model 
+1.Physical (Data Cable, Cat6 Cable )
+2.Data (Switching, Mac Address)
+3.Network (IPv4, Routing)
+4.Transport (TCP, UDP)
+5.Session (Session Management)
+6.Presentation (WMV, JPEG, MOV)
+7.Application (HTTP, SMTP)
+
+Common Ports
+TCP:
+FTP (21)
+SSH (22)
+Telnet (23)
+SMTP (25)
+DNS (53)
+HTTP (80)
+HTTPS (443)
+POP (139 + 445)
+IMAP (143)
+
+UDP:
+DNS (53)
+DHCP (67, 68)
+TFTP (69)
+SNMP (161)
+
