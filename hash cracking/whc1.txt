@@ -2,8 +2,6 @@ This is for cracking window hash
 
 level: 1
 
-type: temporary access
-
 Requirement:
 - usb flash drive
 - sam and system file
