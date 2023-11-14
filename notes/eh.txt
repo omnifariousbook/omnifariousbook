@@ -1,0 +1,18 @@
+NOTE
+Five stage of ethical hacking
+	1. Reconnaissance: Active vs passive
+	2. Scanning and Enumeration: Nmap, Nessus, Nikto, etc
+	3. Gaining Access: Exploitation
+	4. Maintaining Access
+	5. Covering Tracks
+
+TOOLS
+Infomation Gathering:
+- Google
+- Burpsuite
+- email: hunter.io, phonebook.cz, etc
+- verify email: emailhippo.com, etc
+- search for breach: dehashed.com($), etc
+- Domain: crt.sh, OWASP Amass, etc
+- Identifying Website tecnologies: builtwith.com, wappalyzer(web extention), whatweb, etc
+
