@@ -1,4 +1,0 @@
-Tools:
-- hashcat(arch)
-sudo pacman -S hashcat
-require: intel-open-runtime for intel cpu. so just install it with AUR helper
