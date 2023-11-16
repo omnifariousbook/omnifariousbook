@@ -15,4 +15,15 @@ Infomation Gathering:
 - search for breach: dehashed.com($), etc
 - Domain: crt.sh, OWASP Amass, etc
 - Identifying Website tecnologies: builtwith.com, wappalyzer(web extention), whatweb, etc
-
+Scanning and Enumeration:
+- netdiscover(find active ip in lan)
+- nmap:
+	-T<value 1-5> to determind speed
+	-p <port> is port -p- mean all port
+	-A all or everything
+	-when scan udp don't put -A and -p- because it take time to scan
+	example: nmap -T3 -p- -A 10.0.2.15
+- nikto(scan web):
+	-h is host	
+	example: nikto -h http://10.0.2.15
+- dirbuster
