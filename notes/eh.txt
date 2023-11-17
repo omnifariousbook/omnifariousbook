@@ -26,4 +26,14 @@ Scanning and Enumeration:
 - nikto(scan web):
 	-h is host	
 	example: nikto -h http://10.0.2.15
-- dirbuster
+- dirbuster:
+	- is a file/directory penetration testing tool with a Graphic User Interface (GUI) that is used to brute force directories and file names on web application servers.
+- metaploit
+- smbclient:
+	- is to connect to smb
+
+
+STARTING
+1. find ip of the target if target is in lan then do netdiscover
+2. scan target to find any door we can access for example: target open port 80,22,443 or other services
+3. try scan it one by one 
