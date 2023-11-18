@@ -31,9 +31,15 @@ Scanning and Enumeration:
 - metaploit
 - smbclient:
 	- is to connect to smb
+	- example: smbclient -L \\\\10.0.2.15\\
 
 
 STARTING
 1. find ip of the target if target is in lan then do netdiscover
 2. scan target to find any door we can access for example: target open port 80,22,443 or other services
-3. try scan it one by one 
+3. find version of service that it run
+	port80:
+		-apache: 
+			1. version might show up when trying to redirect but page not found happen
+			2. scan using nikto
+4. if you want to find ssh version then try to ssh into target sometime there is a banner that tell ssh version etc
