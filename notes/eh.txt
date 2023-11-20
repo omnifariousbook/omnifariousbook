@@ -32,14 +32,45 @@ Scanning and Enumeration:
 - smbclient:
 	- is to connect to smb
 	- example: smbclient -L \\\\10.0.2.15\\
-
+- searchsploit:
+	- search exploit tools that exist in exploit database (https://www.exploit-db.com/) 
 
 STARTING
 1. find ip of the target if target is in lan then do netdiscover
 2. scan target to find any door we can access for example: target open port 80,22,443 or other services
 3. find version of service that it run
-	port80:
-		-apache: 
-			1. version might show up when trying to redirect but page not found happen
-			2. scan using nikto
-4. if you want to find ssh version then try to ssh into target sometime there is a banner that tell ssh version etc
+port80:
+-apache: 
+	1. version might show up when trying to redirect but page not found happen
+	2. scan using nikto
+	port22
+-shh:
+	1. to find ssh version then try to ssh into target sometime there is a banner that tell ssh version etc
+port139:
+	1.use smbclient to connect to smb and find if target allow anonymous access and try to get as much info as possible
+4. take note
+- webpage they are running and what version is it. ex: apache 1.3.20
+- any error when redirect a webpage. ex: 404 error page
+- does 404 error provide any disclose info
+- port that open
+- etc
+- example: this is a note of kioptrix machine
+10.0.2.4 (kali)
+10.0.2.15 (kioptrix)
+80 - 10.0.2.15
+80/443 - potentially vulnereble to openfuck, (https://www.exploit-db.com/exploits/47080), (https://github.com/heltonWernik/OpenLuck)
+139 - Potentially vulnerable to tran2open, (https://www.exploit-db.com/exploits/10)
+default webpage - apache
+Info disclosure - 404 page
+Info disclosure - server header disclose version info
+80/tcp    open  http        Apache httpd 1.3.20 ((Unix)  (Red-Hat/Linux) mod_ssl/2.8.4 OpenSSL/0.9.6b)
++ mod_ssl/2.8.4 - mod_ssl 2.8.7 and lower are vulnerable to a remote buffer overflow which may allow a remote shell.
+Webalizer Version 2.01 - http://10.0.2.15/usage/usage_200909.html
+SMB: Unix (Samba 2.2.1a)
+OpenSSH 2.9p2 (protocol 1.99)
+Apache/1.3.20 (Unix)
+5. do research a from easy to hard like port 80, 443, 139/smb is the most easiest way to target then go after ssh etc. ex: search for exploit for mod_ssl 2.8.7 on google or using searchsploit
+
+
+EXTRA
+remote code excution
