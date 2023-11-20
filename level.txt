@@ -1,3 +1,0 @@
-Level system:
-level 1 (have access to a device and have all necessary tools, info and requirement)
-level 2 ???
