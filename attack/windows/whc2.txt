@@ -1,7 +1,5 @@
 faster way to get sam and system file
 
-level: 1.5
-
 Requirement:
 - window os
 - python on window (for scripting)
