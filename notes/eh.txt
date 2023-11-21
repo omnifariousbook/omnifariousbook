@@ -1,5 +1,5 @@
 NOTE
-Five stage of ethical hacking
+Five stage of EH
 	1. Reconnaissance: Active vs passive
 	2. Scanning and Enumeration: Nmap, Nessus, Nikto, etc
 	3. Gaining Access: Exploitation
