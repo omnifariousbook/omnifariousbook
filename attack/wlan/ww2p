@@ -1,1 +1,20 @@
 https://forums.kali.org/showthread.php?27521-Create-dictionary-list-from-existing-list-with-Crunch
+REQUIREMENT
+- make sure your pc wifi nic allow monitor mode if note make sure you have portable wifi adapter
+
+TOOLS
+1. airmon-ng
+2. airodump-ng
+3. aircrack-ng
+
+INSTALLATION
+- sudo apt install aircrack-ng (this package contain other "air" tools)
+
+STARTING
+1. check your wlan interface number. ex: wlan0, wlan1
+		- ip a or ifconfig 
+2. switch your wlan to monitor mode no
+		- sudo airmon-ng start wlan0
+		- now wlan0 will turn into wlan0mon
+3. listen to for network
+		- airodump-ng wlan0mon
