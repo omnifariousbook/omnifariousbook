@@ -28,13 +28,12 @@ Scanning and Enumeration:
 - nikto(scan web):
 	-h is host	
 	example: nikto -h http://10.0.2.15
-- dirbuster:
-	- is a file/directory penetration testing tool with a Graphic User Interface (GUI) that is used to brute force directories and file names on web application servers.
+- dirbuster: is a file/directory penetration testing tool with a Graphic User Interface (GUI) that is used to brute force directories and file names on web application servers.
 - metaploit
 - smbclient:
 	- is to connect to smb
 	- example: smbclient -L \\\\10.0.2.15\\
-
+- nessus: scan web vulnerabilities etc
 
 STARTING
 1. find ip of the target if target is in lan then do netdiscover
@@ -44,7 +43,8 @@ port80:
 -apache: 
 	1. version might show up when trying to redirect but page not found happen
 	2. scan using nikto
-	port22
+	3. using burp suit and look for response
+port22
 -shh:
 	1. to find ssh version then try to ssh into target sometime there is a banner that tell ssh version etc
 port139:
