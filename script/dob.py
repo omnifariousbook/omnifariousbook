@@ -1,3 +1,4 @@
+#from year 1900 - 2030
 file = open('dob.txt', 'w')
 for years in range(1900, 2031):
     for e in range(1, 13):
