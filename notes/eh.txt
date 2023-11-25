@@ -25,13 +25,22 @@ Scanning and Enumeration:
 	-A all or everything
 	-when scan udp don't put -A and -p- because it take time to scan
 	example: nmap -T3 -p- -A 10.0.2.15
+	-sn option is for ping scan. ex: nmap -sn 10.0.2.0/24 (to find active machines)
 - nikto(scan web):
 	-h is host	
 	example: nikto -h http://10.0.2.15
 - dirbuster: is a file/directory penetration testing tool with a Graphic User Interface (GUI) that is used to brute force directories and file names on web application servers.
-- metaploit
+- metaploit:
+	1. type 'search <something>' to search for what you need  
+	2. type 'use <something>' to use
+	3. type 'info' to search for info or 'options' to get an options
+	4. type 'set rhosts <ip>' to set a target
+	5. type 'run' or 'exploit' to run an exploit on target
+	- type 'options' to see script, payload, you are using and many more
+	- set payload <option>
 - smbclient:
 	- is to connect to smb
+	- L option is use to list out a share files
 	- example: smbclient -L \\\\10.0.2.15\\
 - nessus: scan web vulnerabilities etc
 
@@ -43,7 +52,7 @@ Gaining Access: Exploitation
 	- e option is for excute. ex: nc 4444 -e /bin/bash (this will give bash shell to the listener, the machine that use this option will give other the shell it doesn't matter if you are listener or connector)
 STARTING
 1. find ip of the target if target is in lan then do netdiscover
-2. scan target to find any door we can access for example: target open port 80,22,443 or other services
+2. scan target to find any door we can access for example: target open port 80,22,443 or other services by using tool like nmap, nessus, nikto
 3. find version of service that it run
 port80:
 -apache: 
@@ -52,7 +61,12 @@ port80:
 	3. using burp suit and look for response
 port22
 -shh:
-	1. to find ssh version then try to ssh into target sometime there is a banner that tell ssh version etc
+	1. to find ssh version then try to ssh into target sometime there is a banner that tell ssh version etc.
+	ex: shh <ip> -oKexAlgorithms=+diffie-hellman-group1-sha1 -c aes128-cbc
+	note: the example above is not normally use because it only apply for older machine
+	-OkexAlgorithms=+<option> (use when error says 'no matching key exchange method found' for newer version ssh they will give some option after 'Their offer:')
+	-oHostKeyAlgorithms=+<option> (use when error says 'no matching host key type found')
+	-c <option>  (c option is cipher and it use when error says 'no matching cipher found') 
 port139:
 	1.use smbclient to connect to smb and find if target allow anonymous access and try to get as much info as possible
 4. take note
@@ -77,9 +91,21 @@ SMB: Unix (Samba 2.2.1a)
 OpenSSH 2.9p2 (protocol 1.99)
 Apache/1.3.20 (Unix)
 5. do research a from easy to hard like port 80, 443, 139/smb is the most easiest way to target then go after ssh etc. ex: search for exploit for mod_ssl 2.8.7 on google or using searchsploit
+6. start exploiting:
+	- use metasploit:
+	
 
 
 EXTRA
 reverse shell: is when target connect to us 
 bind shell: is when we connect to target
-
+payload: is a code that we send to target machine to get access.
+	-none stage payload:
+	send exploit shellcode all at once
+	larger in size and won't always work
+	ex in metasploit: windows/meterpreter_reverse_tcp
+	-staged payload:
+	sends paylaod in stages
+	can be less stable
+	ex in metasploit: windows/meterpreter/reverse_tcp
+	note: when we exploit if stage payload not working then switch nonestage payload
