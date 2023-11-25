@@ -35,6 +35,12 @@ Scanning and Enumeration:
 	- example: smbclient -L \\\\10.0.2.15\\
 - nessus: scan web vulnerabilities etc
 
+Gaining Access: Exploitation
+- netcat:
+	- v option is for verbose(more detail)
+	- l option is for listen it use to listen to connection
+	- p option is for port 
+	- e option is for excute. ex: nc 4444 -e /bin/bash (this will give bash shell to the listener, the machine that use this option will give other the shell it doesn't matter if you are listener or connector)
 STARTING
 1. find ip of the target if target is in lan then do netdiscover
 2. scan target to find any door we can access for example: target open port 80,22,443 or other services
@@ -74,4 +80,6 @@ Apache/1.3.20 (Unix)
 
 
 EXTRA
-remote code excution
+reverse shell: is when target connect to us 
+bind shell: is when we connect to target
+
