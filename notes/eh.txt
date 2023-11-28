@@ -48,6 +48,7 @@ Gaining Access: Exploitation
 - netcat:
 	- v option is for verbose(more detail)
 	- l option is for listen it use to listen to connection
+	- n option is numeric-only IP addresses, no DNS
 	- p option is for port 
 	- e option is for excute. ex: nc 4444 -e /bin/bash (this will give bash shell to the listener, the machine that use this option will give other the shell it doesn't matter if you are listener or connector)
 - hydra:
