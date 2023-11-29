@@ -1,3 +1,4 @@
+#script to generate list of phone numbers. 
 file = open('pn.txt', 'w')
 pn = ['012', '085', '092', '077']
 for i in pn:
