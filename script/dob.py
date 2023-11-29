@@ -1,3 +1,4 @@
+#script to generate date of birth lists dd/mm/yyyy
 #from year 1900 - 2030
 file = open('dob.txt', 'w')
 for years in range(1900, 2031):
