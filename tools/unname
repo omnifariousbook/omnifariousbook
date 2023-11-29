@@ -1,1 +1,8 @@
-
+nmap:
+	-T<value 1-5> to determind speed
+	-p <port> is port -p- mean all port
+	-A all or everything
+	-when scan udp don't put -A and -p- because it take time to scan
+	-sn option is for ping scan. ex: nmap -sn 10.0.2.0/24 (to find active machines)
+	example for normal scan: nmap -T3 -p- -A 10.0.2.15
+	example for ping scan (to find active machines): nmap -sn 10.0.2.0/24
