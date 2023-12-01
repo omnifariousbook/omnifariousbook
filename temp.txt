@@ -1,0 +1,72 @@
+butler: 10.0.2.80
+kali: 10.0.2.4
+
+nmap scan:
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2023-11-30 23:26 EST
+Nmap scan report for 10.0.2.80
+Host is up (0.0010s latency).
+Not shown: 65523 closed tcp ports (reset)
+PORT      STATE SERVICE       VERSION
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+5040/tcp  open  unknown
+7680/tcp  open  pando-pub?
+8080/tcp  open  http          Jetty 9.4.41.v20210516
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-server-header: Jetty(9.4.41.v20210516)
+|_http-title: Site doesn't have a title (text/html;charset=utf-8).
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49670/tcp open  msrpc         Microsoft Windows RPC
+MAC Address: 08:00:27:DE:AA:C6 (Oracle VirtualBox virtual NIC)
+Device type: general purpose
+Running: Microsoft Windows 10
+OS CPE: cpe:/o:microsoft:windows_10
+OS details: Microsoft Windows 10 1709 - 1909
+Network Distance: 1 hop
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+| smb2-security-mode: 
+|   3:1:1: 
+|_    Message signing enabled but not required
+|_nbstat: NetBIOS name: BUTLER, NetBIOS user: <unknown>, NetBIOS MAC: 08:00:27:de:aa:c6 (Oracle VirtualBox virtual NIC)
+| smb2-time: 
+|   date: 2023-12-01T18:29:40
+|_  start_date: N/A
+|_clock-skew: 13h59m58s
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   1.02 ms 10.0.2.80
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 209.90 seconds
+
+
+
+
+
+
+
+nikto scan:
++ Server: Jetty(9.4.41.v20210516)
++ /: The anti-clickjacking X-Frame-Options header is not present. See: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
++ /: Uncommon header 'x-hudson' found, with contents: 1.395.
++ /: Uncommon header 'x-jenkins' found, with contents: 2.289.3.
++ /: Uncommon header 'x-jenkins-session' found, with contents: d32c9236.
++ All CGI directories 'found', use '-C none' to test none
++ .: The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type. See: https://www.netsparker.com/web-vulnerability-scanner/vulnerabilities/missing-content-type-header/
++ Jetty/9.4.41.v20210516 appears to be outdated (current is at least 11.0.6). Jetty 10.0.6 AND 9.4.41.v20210516 are also currently supported.
++ /favicon.ico: identifies this app/server as: Jenkins. See: https://en.wikipedia.org/wiki/Favicon
++ /cgi.cgi/%2e%2e/abyss.conf: Uncommon header 'x-hudson-theme' found, with contents: default.
++ /cgi.cgi/%2e%2e/abyss.conf: Uncommon header 'x-instance-identity' found, with contents: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw43hS+kkhDV0LAwc2YVGFglH5IN1zZfBknSOOnM8uzQe2KSrC0PdLp+bTTNiK80Ill04oLGN5LBVAxwJ0koN0X2FPwGLqM6lJQlw9sESCUK0r6SfyTJJMZbsMaUKgwSFePnEbbheH4tPmNxGtI71812KggjsT22Oi5jKHv3rt2OM3dTa4Ma6jwLwke1Iz/rIYmRuW2pUanPVvyg7V2ZiWfqkMkWWs0WN9Y1MnGfyDrIGMYlDIFDZ1w2J25tBTzCR/tWMXOzyZh34hsbZX8a1bzFa7q+DsfL0D/hdDIG6pOuBO8JhffUsKe7qr4Xp2HQ1z/3AQLo4xYq8ojWOq7xX6wIDAQAB.
++ 26662 requests: 0 error(s) and 9 item(s) reported on remote host
++ End Time:           2023-12-01 00:06:59 (GMT-5) (214 seconds)
+---------------------------------------------------------------------------
++ 1 host(s) tested
