@@ -1,6 +1,10 @@
 butler: 10.0.2.80
 kali: 10.0.2.4
 
+vulnerable: 
+https://github.com/nu11secur1ty/Windows10Exploits/tree/master/Undefined/CVE-2020-0796
+
+
 nmap scan:
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2023-11-30 23:26 EST
 Nmap scan report for 10.0.2.80
