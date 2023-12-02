@@ -47,7 +47,16 @@ Scanning and Enumeration:
 	- L option is use to list out a share files
 	- example: smbclient -L \\\\10.0.2.15\\
 - nessus: scan web vulnerabilities etc
-
+- dnsrecon:
+	- use to find domain if target have port 53 open
+	-r range (in this example we use local host)
+	-d domain (just put what ever because it need)
+	-n target
+	- ex: dnsrecon -r 127.0.0.0/24 -n 10.0.2.80 -d blah
+	
+- dirb:
+	- tool like dirbuster
+	- example: dirb <url> <wordlist>
 Gaining Access: Exploitation
 - netcat:
 	- v option is for verbose(more detail)
