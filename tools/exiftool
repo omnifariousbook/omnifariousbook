@@ -1,2 +1,3 @@
 exiftool:
-   use for inventigate the image, which can provide us with meta data
+   - use for inventigate the image, which can provide us with meta data
+   - example: exiftool <file>
