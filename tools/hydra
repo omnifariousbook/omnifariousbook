@@ -1,4 +1,5 @@
 - hydra:
+	- use for bruteforce ssh, ftp, etc
 	-l is login or user name
 	-P password
 	-t run TASKS number of connects in parallel (default: 16)
