@@ -1,0 +1,3 @@
+scp:
+when succeed in ssh into user and want to get a file from that user use this tool to get it.
+example: sudo scp <user>@<ip>:<file> <location you want to put file>
