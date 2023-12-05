@@ -3,3 +3,4 @@ scp:
 example: sudo scp <user>@<ip>:<file> <location you want to put file>
   - we can also use it for sending a file to a user after we get ssh into user.
 example: sudo scp <file you want to send> <user>@<ip>:<localtion you want to put file>
+  - and when you upload file if permission denied then use /dev/shm dir to put your file
