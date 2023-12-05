@@ -1,0 +1,3 @@
+binwalk:
+   - Binwalk is a tool that allows you to search binary images for embedded files and executable code
+   - binwalk <file>
