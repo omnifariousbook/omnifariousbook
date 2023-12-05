@@ -1,0 +1,4 @@
+zip2john:
+  - you can use this to crack lock zip or lock file in zip which when we extract normally it have no content. this tool will turn lock zip for file into hash format that john can understand then we can use john to crack it.
+  - example: john2zip <file> > hash.txt (turn zip or file into hash)
+  - example: john hash.txt (use the hash that we extract to crack with john)
