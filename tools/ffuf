@@ -1,5 +1,0 @@
-ffuf:
-- tools like dirb or dirbuster
-- w option is a wordlist
-- u option is target url
-- example: ffuf -w <path to wordlist:FUZZ> -u http://<ip>/FUZZ

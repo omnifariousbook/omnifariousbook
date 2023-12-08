@@ -1,5 +1,0 @@
-binwalk:
-   - Binwalk is a tool that allows you to search binary images for embedded files and executable code. like some image file binary contain zip file in it so we can use this tool to check or obtain it.
-   -e extract
-   - example: binwalk <file>
-   - example: binwalk -e <file> (use to extract something)

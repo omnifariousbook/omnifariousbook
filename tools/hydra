@@ -1,7 +1,0 @@
-- hydra:
-	- use for bruteforce ssh, ftp, etc
-	-l is login or user name
-	-P password
-	-t run TASKS number of connects in parallel (default: 16)
-	-v / -V verbose mode / show login+pass combination for each attempt
-	example: hydra -l root -P rockyou.txt ssh://<ip>:<port> -t 4 -V

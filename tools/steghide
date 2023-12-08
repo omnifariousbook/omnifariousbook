@@ -1,3 +1,0 @@
-steghide:
-  - use this tool to find hidden files in image/audio files. but we need passphrase because most file will have that so we have to find it first.
-  - example: steghide extract -sf <file>

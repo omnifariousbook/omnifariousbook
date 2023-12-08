@@ -1,3 +1,0 @@
-- nikto(scan web):
-	-h is host	
-	example for normal scan: nikto -h http://10.0.2.15

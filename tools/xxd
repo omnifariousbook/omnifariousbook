@@ -1,3 +1,0 @@
-xxd:
-  - use to dump file into hax format
-  - example: xxd <file>
