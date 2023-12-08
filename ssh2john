@@ -1,3 +1,0 @@
-ssh2john:
-  - use this when you have ssh rsa file but it need a phrase password so you can use this tool to turn the rsa file into hash for john to crack.
-  - example: ssh2john <file>
