@@ -1,0 +1,82 @@
+7z:
+  - use this tool to extract zip file with password, when we have password.
+
+
+binwalk:
+   - Binwalk is a tool that allows you to search binary images for embedded files and executable code. like some image file binary contain zip file in it so we can use this tool to check or obtain it.
+   -e extract
+   - example: binwalk <file>
+   - example: binwalk -e <file> (use to extract something)
+
+
+exiftool:
+   - use for inventigate the image, which can provide us with meta data
+   - example: exiftool <file>
+
+
+fcrackzip:
+	- use for cracking lock zip
+
+
+ffuf:
+- tools like dirb or dirbuster
+- w option is a wordlist
+- u option is target url
+- example: ffuf -w <path to wordlist:FUZZ> -u http://<ip>/FUZZ
+
+
+hydra:
+	- use for bruteforce ssh, ftp, etc
+	-l is login or user name
+	-P password
+	-t run TASKS number of connects in parallel (default: 16)
+	-v / -V verbose mode / show login+pass combination for each attempt
+	example: hydra -l root -P rockyou.txt ssh://<ip>:<port> -t 4 -V
+
+
+john
+  - for cracking hash
+
+
+nikto(scan web):
+	-h is host	
+	example for normal scan: nikto -h http://10.0.2.15
+
+
+nmap:
+	-T<value 1-5> to determind speed
+	-p <port> is port -p- mean all port
+	-A all or everything
+	-when scan udp don't put -A and -p- because it take time to scan
+	-sn option is for ping scan. ex: nmap -sn 10.0.2.0/24 (to find active machines)
+	example for normal scan: nmap -T3 -p- -A 10.0.2.15
+	example for ping scan (to find active machines): nmap -sn 10.0.2.0/24
+
+
+scp:
+  - when succeed in ssh into user and want to get a file from that user use this tool to get it.
+example: sudo scp <user>@<ip>:<file> <location you want to put file>
+  - we can also use it for sending a file to a user after we get ssh into user.
+example: sudo scp <file you want to send> <user>@<ip>:<localtion you want to put file>
+  - and when you upload file if permission denied then use /dev/shm dir to put your file
+
+
+steghide:
+  - use this tool to find hidden files in image/audio files. but we need passphrase because most file will have that so we have to find it first.
+  - example: steghide extract -sf <file>
+
+
+xxd:
+  - use to dump file into hax format
+  - example: xxd <file>
+
+
+zip2john:
+  - you can use this to crack lock zip or lock file in zip which when we extract normally it have no content. this tool will turn lock zip for file into hash format that john can understand then we can use john to crack it.
+  - example: john2zip <file> > hash.txt (turn zip or file into hash)
+  - example: john hash.txt (use the hash that we extract to crack with john)
+
+
+ssh2john:
+  - use this when you have ssh rsa file but it need a phrase password so you can use this tool to turn the rsa file into hash for john to crack.
+  - example: ssh2john <file>
