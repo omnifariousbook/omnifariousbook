@@ -31,7 +31,30 @@ hydra:
 	-P password
 	-t run TASKS number of connects in parallel (default: 16)
 	-v / -V verbose mode / show login+pass combination for each attempt
-	example: hydra -l root -P rockyou.txt ssh://<ip>:<port> -t 4 -V
+	example1: hydra -l root -P rockyou.txt ssh://<ip>:<port> -t 4 -V
+	example2: hydra -l '' -P 3digits.txt -f -v MACHINE_IP http-post-form "/login.php:pin=^PASS^:Access denied" -s 8000
+	- for example2 we have to look at the html
+	part of the html:
+<body class="bg-thm text-white">
+  <div class="flex items-center justify-center min-h-screen w-full max-w-xl mx-auto">
+    <form method="post" action="login.php" class="grid grid-cols-3 max-w-lg mx-auto bg-thm-900 p-4 font-mono">
+      <input type="hidden" name="pin" />
+
+	1.The method is post
+	2.The PIN code value is sent with the name pin
+In other words, the main login page <url> receives the input from the user and sends it to /login.php using the name pin
+
+	-l '' indicates that the login name is blank as the security lock only requires a password
+	-P 3digits.txt specifies the password file to use
+	-f stops Hydra after finding a working password
+	-v provides verbose output and is helpful for catching errors
+	MACHINE_IP is the IP address of the target
+	http-post-form specifies the HTTP method to use
+	"/login.php:pin=^PASS^:Access denied" has three parts separated by :
+	/login.php is the page where the PIN code is submitted
+	pin=^PASS^ will replace ^PASS^ with values from the password list
+	Access denied indicates that invalid passwords will lead to a page that contains the text “Access denied”
+	-s 8000 indicates the port number on the target
 
 
 john
