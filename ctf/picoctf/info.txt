@@ -1,0 +1,4 @@
+INFO:
+- challange name: keygenme-py
+- tags: reverse engineering
+- what they provide: keygenme-trail.py
