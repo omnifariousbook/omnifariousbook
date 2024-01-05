@@ -132,3 +132,6 @@ wfuzz:
   --hs "Please enter the correct credentials" hides responses containing the string "Please enter the correct credentials", which is the message displayed for wrong login attempts.
   -u specifies the target URL.
   -d "username=FUZZ&password=FUZ2Z" provides the POST data format where FUZZ will be replaced by usernames and FUZ2Z by passwords
+
+gpg2john:
+	- use this to convert asc which is yhe key to the gpg file and crack with johntheripper
