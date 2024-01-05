@@ -134,4 +134,6 @@ wfuzz:
   -d "username=FUZZ&password=FUZ2Z" provides the POST data format where FUZZ will be replaced by usernames and FUZ2Z by passwords
 
 gpg2john:
-	- use this to convert asc which is yhe key to the gpg file and crack with johntheripper
+	- use this to convert asc which is the key to the pgp file and crack with johntheripper
+
+
