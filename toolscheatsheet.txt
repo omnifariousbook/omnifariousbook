@@ -134,6 +134,13 @@ wfuzz:
   -d "username=FUZZ&password=FUZ2Z" provides the POST data format where FUZZ will be replaced by usernames and FUZ2Z by passwords
 
 gpg2john:
-	- use this to convert asc which is the key to the pgp file and crack with johntheripper
+	- use this to convert asc which is the key to the pgp file and crack with johntheripper to get the passphrase
+	example: gpg2john <file.asc> > <file>
 
+gpg:
+	- after you crack asc file with john you can use gpg to decrypt the pgp file and enter the passphrase that you crach with john (use it in ssh not not the file you download from ssh)
+	
+	example:
+	1. first you have to import asc file which is the key of pgp file. ex: gpg --import <file.asc>
+	2. then decrypt the file. ex: gpg --decrypt <file.pgp>
 
